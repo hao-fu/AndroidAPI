@@ -87,7 +87,7 @@ public abstract class CountDownTimer {
                     } 
                 } 
             } 
-            addTaint(msg.getTaint());
+            //addTaint(msg.getTaint());
             
         }
         

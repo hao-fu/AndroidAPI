@@ -240,9 +240,9 @@ protected boolean onTransact(int code, Parcel data, Parcel reply,
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.164 -0500", hash_original_method = "062423BD3F619586ADD6FBBF398B1A78", hash_generated_method = "A93C1D716934E3F725A1746D785E8C4E")
     
 public void dump(FileDescriptor fd, String[] args) {
-        fd.addTaint(getTaint());
-        if (args != null)
-            fd.addTaint(args[0].getTaint());
+        //fd.addTaint(getTaint());
+        //if (args != null)
+          //  fd.addTaint(args[0].getTaint());
         /*
         FileOutputStream fout = new FileOutputStream(fd);
         PrintWriter pw = new PrintWriter(fout);
@@ -261,9 +261,9 @@ public void dump(FileDescriptor fd, String[] args) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.169 -0500", hash_original_method = "43E702619EA899B9933A99C2C1DACCB9", hash_generated_method = "972C8DC111E0C75BBB8941828C7F350F")
     
 public void dumpAsync(final FileDescriptor fd, final String[] args) {
-        fd.addTaint(getTaint());
-        if (args != null)
-            fd.addTaint(args[0].getTaint());
+        //fd.addTaint(getTaint());
+        //if (args != null)
+          //  fd.addTaint(args[0].getTaint());
 
         /*
         final FileOutputStream fout = new FileOutputStream(fd);
@@ -293,7 +293,7 @@ public void dumpAsync(final FileDescriptor fd, final String[] args) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.172 -0500", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "F6D7C174AEA7671EB5A5529CC69A276B")
     
 protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
-        fout.addTaint(fd.getTaintInt() + args[0].getTaintInt());
+        //fout.addTaint(fd.getTaintInt() + args[0].getTaintInt());
     }
 
     /**
@@ -313,8 +313,8 @@ public final boolean transact(int code, Parcel data, Parcel reply,
         if (reply != null) {
             reply.setDataPosition(0);
         }
-        this.addTaint(data.getTaint());
-        this.addTaint(reply.getTaint());
+        //this.addTaint(data.getTaint());
+        //this.addTaint(reply.getTaint());
         data.mValueIBinder = this;
         reply.mValueIBinder = this;
         return r;
@@ -433,14 +433,14 @@ BinderProxy() {
     
     public boolean pingBinder(){
     	//Formerly a native method
-    	return getTaintBoolean();
+    	return false; //getTaintBoolean();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.200 -0500", hash_original_method = "ACDA4E684B1D0EE78316DF741FE72AF5", hash_generated_method = "E4207F492E6DCF047D2677C31199E4F0")
     
     public boolean isBinderAlive(){
     	//Formerly a native method
-    	return getTaintBoolean();
+    	return false; //getTaintBoolean();
     }
     
     @DSSafe(DSCat.SAFE_LIST)
@@ -453,7 +453,7 @@ public IInterface queryLocalInterface(String descriptor) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.892 -0400", hash_original_method = "6A74CDB8273CEC1C9569965EF003EFCB", hash_generated_method = "EA4B3F54BFD9578B1A4BA99DF2C0FDB9")
     public String getInterfaceDescriptor() throws RemoteException {
         String s = new String();
-        s.addTaint(this.getTaint());
+        //s.addTaint(this.getTaint());
         return s;
     }
     @DSSafe(DSCat.SAFE_LIST)
@@ -462,11 +462,12 @@ public IInterface queryLocalInterface(String descriptor) {
     public boolean transact(int code, Parcel data, Parcel reply,
                 int flags) throws RemoteException{
     	//Formerly a native method
-    	addTaint(code);
-    	addTaint(data.getTaint());
-    	addTaint(reply.getTaint());
-    	addTaint(flags);
-    	return getTaintBoolean();
+    	//addTaint(code);
+    	//addTaint(data.getTaint());
+    	//addTaint(reply.getTaint());
+    	//addTaint(flags);
+    	//return getTaintBoolean();
+    	return false;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.212 -0500", hash_original_method = "9A12D44BC0A4F3509826AD7E16FA0EA1", hash_generated_method = "2FD103B153D93F63BD283224EC0EA60C")
@@ -474,17 +475,18 @@ public IInterface queryLocalInterface(String descriptor) {
     public void linkToDeath(DeathRecipient recipient, int flags)
                 throws RemoteException{
     	//Formerly a native method
-    	addTaint(recipient.getTaint());
-    	addTaint(flags);
+    	/*addTaint(recipient.getTaint());
+    	addTaint(flags);*/
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.216 -0500", hash_original_method = "C682342F842ADE74AC6BCB96B6CECF17", hash_generated_method = "5DDA4B68258C92EEE11897BC5CBC0FCF")
     
     public boolean unlinkToDeath(DeathRecipient recipient, int flags){
     	//Formerly a native method
-    	addTaint(recipient.getTaint());
+    	/*addTaint(recipient.getTaint());
     	addTaint(flags);
-    	return getTaintBoolean();
+    	return getTaintBoolean();*/
+    	return false;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.219 -0500", hash_original_method = "C4F8E51C715A0CBA59E063E00B1AFC6F", hash_generated_method = "D3572BDB8A72D93CE954CDFF82F510A1")
@@ -503,17 +505,17 @@ public void dump(FileDescriptor fd, String[] args) throws RemoteException {
             reply.recycle();
         }
         */
-        fd.addTaint(getTaint());
+        /*fd.addTaint(getTaint());
         if (args != null)
-            fd.addTaint(args[0].getTaint());
+            fd.addTaint(args[0].getTaint());*/
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.221 -0500", hash_original_method = "07563DCFF6B89513E8E1D1CEF9639FFA", hash_generated_method = "C791514F1AE69543F6D21AEC2A2A796F")
     
 public void dumpAsync(FileDescriptor fd, String[] args) throws RemoteException {
-        fd.addTaint(getTaint());
+       /* fd.addTaint(getTaint());
         if (args != null)
-            fd.addTaint(args[0].getTaint());
+            fd.addTaint(args[0].getTaint());*/
        /* 
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();

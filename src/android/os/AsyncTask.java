@@ -46,7 +46,6 @@ package android.os;
 // Droidsafe Imports
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
-import android.util.Log;
 import droidsafe.annotations.*;
 import java.util.ArrayDeque;
 import java.util.LinkedList;
@@ -113,8 +112,6 @@ public static void setDefaultExecutor(Executor exec) {
         public Thread newThread(Runnable r) {
             Thread varB4EAC82CA7396A68D541C85D26508E83_1226229624 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1226229624 = new Thread(r, "AsyncTask #" + mCount.getAndIncrement());
-            addTaint(r.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1226229624.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1226229624;
             
         }
@@ -509,13 +506,11 @@ switch(mStatus){
             case RUNNING:
             IllegalStateException varBBF5B433B0BE46D00C5A56392221703A_33384526 = new IllegalStateException("Cannot execute task:"
                             + " the task is already running.");
-            varBBF5B433B0BE46D00C5A56392221703A_33384526.addTaint(getTaint());
             throw varBBF5B433B0BE46D00C5A56392221703A_33384526;
             case FINISHED:
             IllegalStateException var4AC73FB34036B56D3B47DF6B5659E72C_879800599 = new IllegalStateException("Cannot execute task:"
                             + " the task has already been executed "
                             + "(a task can be executed only once)");
-            var4AC73FB34036B56D3B47DF6B5659E72C_879800599.addTaint(getTaint());
             throw var4AC73FB34036B56D3B47DF6B5659E72C_879800599;
 }
         } //End block

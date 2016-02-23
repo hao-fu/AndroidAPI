@@ -169,7 +169,7 @@ Bundle(Parcel parcelledData, int length) {
     public  Bundle(int capacity) {
         mMap = new HashMap<String, Object>(capacity);
         mClassLoader = getClass().getClassLoader();
-        addTaint(capacity);
+        //addTaint(capacity);
         // ---------- Original Method ----------
         //mMap = new HashMap<String, Object>(capacity);
         //mClassLoader = getClass().getClassLoader();
@@ -200,7 +200,7 @@ Bundle(Parcel parcelledData, int length) {
         mHasFds = b.mHasFds;
         mFdsKnown = b.mFdsKnown;
         mClassLoader = b.mClassLoader;
-        addTaint(b.getTaint());
+        //addTaint(b.getTaint());
         // ---------- Original Method ----------
         //if (b.mParcelledData != null) {
             //mParcelledData = Parcel.obtain();
@@ -273,8 +273,8 @@ public ClassLoader getClassLoader() {
         mAllowFds = allowFds;
         //addTaint(allowFds);
         boolean var025F253325B46929CD34F2A7C3C55E7C_657424141 = (orig);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1839057912 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1839057912;
+                //boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1839057912 = getTaintBoolean();
+        return false;//var84E2C64F38F78BA3EA5C905AB5A2DA27_1839057912;
         // ---------- Original Method ----------
         //boolean orig = mAllowFds;
         //mAllowFds = allowFds;
@@ -323,11 +323,11 @@ synchronized void unparcel() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.146 -0400", hash_original_method = "89E974D778C485ED4A98439CDF5961E3", hash_generated_method = "2589B20E3DA759F2944F86B92C96601F")
     public int size() {
         unparcel();
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_722182444 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_722182444;
+        //int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_722182444 = getTaintInt();
+        //return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_722182444;
         // ---------- Original Method ----------
         //unparcel();
-        //return mMap.size();
+        return mMap.size();
     }
     
     @DSComment("OS Bundle data structure")
@@ -335,11 +335,11 @@ synchronized void unparcel() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.152 -0400", hash_original_method = "8B93AFDE665AAAFE98B5EE9FD5355D4B", hash_generated_method = "3DE10A26149EEB2E3D91D31D57ADFD12")
     public boolean isEmpty() {
         unparcel();
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1436061990 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1436061990;
+        //boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1436061990 = getTaintBoolean();
+        //return var84E2C64F38F78BA3EA5C905AB5A2DA27_1436061990;
         // ---------- Original Method ----------
         //unparcel();
-        //return mMap.isEmpty();
+        return mMap.isEmpty();
     }
 
     /**
@@ -434,7 +434,7 @@ public Set<String> keySet() {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.242 -0400", hash_original_method = "4B0480B2866CB29DA37F7AEC68A5E217", hash_generated_method = "5DEF87C3126270DC5B9ED343C95E52E8")
     public boolean hasFileDescriptors() {
-        return getTaintBoolean();
+        return false;//getTaintBoolean();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -1480,7 +1480,7 @@ public Parcelable[] getParcelableArray(String key) {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.604 -0400", hash_original_method = "4066E862ACF29CBEB786556AAFBFC58D", hash_generated_method = "000888949C0E1171C26D37E7DD90846A")
     public <T extends Parcelable> ArrayList<T> getParcelableArrayList(String key) {
-        addTaint(key.getTaint());
+        //addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
         if(o == null)        
@@ -1521,7 +1521,7 @@ ArrayList<T> var540C13E9E156B687226421B24F2DF178_763858156 =             null;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.611 -0400", hash_original_method = "F3D4EB475C3465E3892E6091F83F5D92", hash_generated_method = "BCE849B03B3DED85ECE99E857AB69DEB")
     public <T extends Parcelable> SparseArray<T> getSparseParcelableArray(String key) {
-        addTaint(key.getTaint());
+        //addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
         if(o == null)        
