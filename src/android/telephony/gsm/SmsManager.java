@@ -1,4 +1,4 @@
-package android.telephony;
+package android.telephony.gsm;
 
 import java.util.ArrayList;
 

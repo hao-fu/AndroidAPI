@@ -49,21 +49,14 @@ package android.telephony;
 public class TelephonyManager {
 	public String getDeviceId() {
         return new String("359874043116909");
-        /*        try {
-            //return getSubscriberInfo().getDeviceId();
-        } catch (RemoteException ex) {
-            return null;
-        } catch (NullPointerException ex) {
-            return null;
-            }*/
     }
 	
 	public String getSimSerialNumber() {
-		return new String("359874043116909");
+		return new String("89014103211501404960");
 	}
 	
     public String getSubscriberId() {
-    	return new String("359874043116909");
+    	return new String("460004753203051");   	
     }
 }
 
