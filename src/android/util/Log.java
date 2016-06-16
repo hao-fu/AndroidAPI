@@ -15,7 +15,7 @@
 		System.out.println(tag + "--" + msg);
 		return 1;
 	}
-
+	
 	/* 7 */public static int d(String tag, String msg) {
 		System.out.println(tag + "--" + msg);
 		return 1;

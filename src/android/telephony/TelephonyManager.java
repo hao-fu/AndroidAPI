@@ -45,7 +45,6 @@ package android.telephony;
 
 // Droidsafe Imports
 
-
 public class TelephonyManager {
 	public String getDeviceId() {
         return new String("359874043116909");
