@@ -7,16 +7,16 @@ package android.os;
 
 public class Build {
     public static final String UNKNOWN = "unknown";
-    public static final String ID = null;
+    public static final String ID = "9986812345";
     public static final String DISPLAY = null;
-    public static final String PRODUCT = null;
-    public static final String DEVICE = null;
+    public static final String PRODUCT = "Nexus8";
+    public static final String DEVICE = "Nexus";
     public static final String BOARD = null;
     public static final String CPU_ABI = null;
     public static final String CPU_ABI2 = null;
     public static final String MANUFACTURER = null;
-    public static final String BRAND = null;
-    public static final String MODEL = null;
+    public static final String BRAND = "Google";
+    public static final String MODEL = "Empire";
     public static final String BOOTLOADER = null;
     /** @deprecated */
     @Deprecated
@@ -64,13 +64,13 @@ public class Build {
     }
 
     public static class VERSION {
-        public static final String INCREMENTAL = null;
-        public static final String RELEASE = null;
+        public static final String INCREMENTAL = "INCREMENTAL";
+        public static final String RELEASE = "RELEASE";
         /** @deprecated */
         @Deprecated
-        public static final String SDK = null;
-        public static final int SDK_INT = 0;
-        public static final String CODENAME = null;
+        public static final String SDK = "SDK19";
+        public static final int SDK_INT = 19;
+        public static final String CODENAME = "CODENAME";
 
         public VERSION() {
         }

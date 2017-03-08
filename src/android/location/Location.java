@@ -59,4 +59,8 @@ public class Location {
     public void setSpeed(float speed) {
         this.speed = speed;
     }
+    
+    public float getAccuracy() {
+    	return (float) 1.0001;
+    }
 }
